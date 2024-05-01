@@ -329,3 +329,33 @@ class Supplier:
         return self.supplierContactDetails
     def set_supplierContactDetails(self, supplierContactDetails):
         self.supplierContactDetails = supplierContactDetails
+
+
+class Caterer(Supplier):
+    """a class to represent Caterer"""
+    def __init__(self, supplierID, supplierName, supplierAddress, supplierContactDetails, menu, caterminOfGuests,
+                 catermaxOfGuests):
+        super().__init__()
+        self.menu = menu
+        self.caterminOfGuests = caterminOfGuests
+        self.catermaxOfGuests = catermaxOfGuests
+
+# method to view the menu
+    def viewMenu(self):
+        pass
+
+# adding the setter and getter functions for the class Caterer
+    def get_menu(self):
+        return self.menu
+    def set_menu(self, menu):
+        self.menu = menu
+
+    def get_caterminOfGuests(self):
+        return self.caterminOfGuests
+    def set_caterminOfGuests(self, caterminOfGuests):
+        self.caterminOfGuests = caterminOfGuests
+
+    def get_catermaxOfGuests(self):
+        return self.catermaxOfGuests
+    def set_catermaxOfGuests(self, catermaxOfGuests):
+        self.catermaxOfGuests = catermaxOfGuests
