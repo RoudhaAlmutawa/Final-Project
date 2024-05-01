@@ -61,7 +61,7 @@ def set_passportDetails(self, passportDetails):
 
 class Manager(Employee):
     def __init__(self, name="", employeeID=0, department="", jobTitle="", basicSalary=0.0, age=0, dateOfBirth= datetime, passportDetails="", managerType ="", ):
-        super().__init__()
+        super().__init__()      # Calling the superclass constructor
         self.managerType= managerType
         self.managedEmployees=[]
 
@@ -80,3 +80,16 @@ def getManagedEmployees(self):
 
 def setManagedEmployees(self, managedEmployees):
   self.managedEmployees = managedEmployees
+
+
+class Salesperson(Employee):
+    def __init__(self, name="", employeeID=0, department="", jobTitle="", basicSalary=0.0, age=0, dateOfBirth= datetime, passportDetails="", managerID=""):
+        super().__init()      # Calling the superclass constructor
+        self.managerID= managerID
+
+#adding the setter and getter functions for the class Salesperson
+def getManagerID(self):
+     return self.managerID
+def setManagerID(self, managerID):
+    self.managerID = managerID
+
