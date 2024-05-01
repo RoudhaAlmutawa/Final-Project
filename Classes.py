@@ -44,7 +44,6 @@ def get_basicSalary(self):
 def set_basicSalary(self, basicSalary):
     self.basicSalary = basicSalary
 
-
 def get_age(self):
     return self.age
 def set_age(self, age):
@@ -59,3 +58,25 @@ def get_passportDetails(self):
     return self.passportDetails
 def set_passportDetails(self, passportDetails):
     self.passportDetails = passportDetails
+
+class Manager(Employee):
+    def __init__(self, name="", employeeID=0, department="", jobTitle="", basicSalary=0.0, age=0, dateOfBirth= datetime, passportDetails="", managerType ="", ):
+        super().__init__()
+        self.managerType= managerType
+        self.managedEmployees=[]
+
+#method to know the mannaged employees
+def getManagedEmployees(self):
+    pass
+
+#adding the setter and getter functions for the class Manager
+def getManagerType(self):
+    return self.managerType
+def setManagerType(self, managerType):
+    self.managerType = managerType
+
+def getManagedEmployees(self):
+    return self.managedEmployees
+
+def setManagedEmployees(self, managedEmployees):
+  self.managedEmployees = managedEmployees
