@@ -359,3 +359,92 @@ class Caterer(Supplier):
         return self.catermaxOfGuests
     def set_catermaxOfGuests(self, catermaxOfGuests):
         self.catermaxOfGuests = catermaxOfGuests
+
+
+class CleaningCompany(Supplier):
+    """a class to represent CleaningCompany"""
+
+    def __init__(self, supplierID, supplierName, supplierAddress, supplierContactDetails, cleaningHours,
+                 typeOfCleaning):
+        super().__init__()
+        self.cleaningHours = cleaningHours
+        self.typeOfCleaning = typeOfCleaning
+
+    # method to manage cleaning packages
+    def manageCleaningPackages(self):
+        pass
+
+    # adding the setter and getter functions for the class CleaningCompany
+    def get_cleaningHours(self):
+        return self.cleaningHours
+    def set_cleaningHours(self, cleaningHours):
+        self.cleaningHours = cleaningHours
+
+    def get_typeOfCleaning(self):
+        return self.typeOfCleaning
+    def set_typeOfCleaning(self, typeOfCleaning):
+        self.typeOfCleaning = typeOfCleaning
+
+
+class DecorationsCompany(Supplier):
+    """a class to represent DecorationsCompany"""
+
+    def __init__(self, supplierID, supplierName, supplierAddress, supplierContactDetails, arrangementsType, cost,
+                 decorationsColor):
+        super().__init__()
+        self.arrangementsType = arrangementsType
+        self.cost = cost
+        self.decorationsColor = decorationsColor
+
+    # method to design decoration packages
+    def designDecorationPackages(self):
+        pass
+
+    # adding the setter and getter functions for the class DecorationsCompany
+    def get_arrangementsType(self):
+        return self.arrangementsType
+    def set_arrangementsType(self, arrangementsType):
+        self.arrangementsType = arrangementsType
+
+    def get_cost(self):
+        return self.cost
+    def set_cost(self, cost):
+        self.cost = cost
+
+    def get_decorationsColor(self):
+        return self.decorationsColor
+    def set_decorationsColor(self, decorationsColor):
+        self.decorationsColor = decorationsColor
+
+class EntertainmentCompany(Supplier):
+    """a class to represent EntertainmentCompany"""
+    def __init__(self, supplierID, supplierName, supplierAddress, supplierContactDetails, typeOfEntertainment):
+        super().__init__()
+        self.typeOfEntertainment = typeOfEntertainment
+
+#method to view entertainers
+    def viewEntertainers(self):
+      pass
+
+# adding the setter and getter functions for the class EntertainmentCompany
+    def get_typeOfEntertainment(self):
+        return self.typeOfEntertainment
+    def set_typeOfEntertainment(self, typeOfEntertainment):
+        self.typeOfEntertainment = typeOfEntertainment
+
+class FurnitureSupplier(Supplier):
+    """a class to represent FurnitureSupplier"""
+    def __init__(self, supplierID, supplierName, supplierAddress, supplierContactDetails, typeOfFurniture, furnitureColor):
+        super().__init__()
+        self.typeOfFurniture = typeOfFurniture
+        self.furnitureColor = furnitureColor
+
+# adding the setter and getter functions for the class FurnitureSupplier
+    def get_typeOfFurniture(self):
+        return self.typeOfFurniture
+    def set_typeOfFurniture(self, typeOfFurniture):
+        self.typeOfFurniture = typeOfFurniture
+    def get_furnitureColor(self):
+        return self.furnitureColor
+    def set_furnitureColor(self, furnitureColor):
+        self.furnitureColor = furnitureColor
