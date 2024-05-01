@@ -296,3 +296,36 @@ class Venue:
         return self.venMaxOfGuests
     def set_venMaxOfGuests(self, venMaxOfGuests):
         self.venMaxOfGuests = venMaxOfGuests
+
+class Supplier:
+    """a class to represent Supplier"""
+    def __init__(self, supplierID=0, supplierName="", supplierAddress="", supplierContactDetails=""):
+        self.supplierID= supplierID
+        self.supplierName= supplierName
+        self.supplierAddress= supplierAddress
+        self.supplierContactDetails= supplierContactDetails
+
+#method to view services
+    def viewServices(self):
+        pass
+
+#adding the setter and getter functions for the class Supplier
+    def get_supplierID(self):
+        return self.supplierID
+    def set_supplierID(self, supplierID):
+        self.supplierID = supplierID
+
+    def get_supplierName(self):
+        return self.supplierName
+    def set_supplierName(self, supplierName):
+        self.supplierName = supplierName
+
+    def get_supplierAddress(self):
+        return self.supplierAddress
+    def set_supplierAddress(self, supplierAddress):
+        self.supplierAddress = supplierAddress
+
+    def get_supplierContactDetails(self):
+        return self.supplierContactDetails
+    def set_supplierContactDetails(self, supplierContactDetails):
+        self.supplierContactDetails = supplierContactDetails
