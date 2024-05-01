@@ -225,3 +225,31 @@ class Client:
     def setClientBudget(self, clientBudget):
         self.clientBudget = clientBudget
 
+class Guest:
+    """a class to represent a Guest"""
+    def __init__(self, guestID=0, guestName="", guestAddress="", guestContactDetails=""):
+        self.guestID= guestID
+        self.guestName= guestName
+        self.guestAddress= guestAddress
+        self.guestContactDetails= guestContactDetails
+
+#adding the setter and getter functions for the class Guest
+    def getGuestID(self):
+        return self.guestID
+    def setGuestID(self, guestID):
+        self.guestID = guestID
+
+    def getGuestName(self):
+        return self.guestName
+    def setGuestName(self, guestName):
+        self.guestName = guestName
+
+    def getGuestAddress(self):
+        return self.guestAddress
+    def setGuestAddress(self, guestAddress):
+        self.guestAddress = guestAddress
+
+    def getGuestContactDetails(self):
+        return self.guestContactDetails
+    def setGuestContactDetails(self, guestContactDetails):
+        self.guestContactDetails = guestContactDetails
