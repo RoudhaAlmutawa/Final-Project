@@ -81,7 +81,6 @@ def getManagedEmployees(self):
 def setManagedEmployees(self, managedEmployees):
   self.managedEmployees = managedEmployees
 
-
 class Salesperson(Employee):
     def __init__(self, name="", employeeID=0, department="", jobTitle="", basicSalary=0.0, age=0, dateOfBirth= datetime, passportDetails="", managerID=""):
         super().__init()      # Calling the superclass constructor
@@ -92,4 +91,99 @@ def getManagerID(self):
      return self.managerID
 def setManagerID(self, managerID):
     self.managerID = managerID
+
+
+class Event:
+    """a class to represent event"""
+    def __init__(self, eventID=0, eventType="", theme= "", eventDate=datetime, eventTime= datetime, eventDuration= 0, venueAddress= "", clientID=0, guestList= [], cleaningCompany=None, cateringCompany= None, decorationsCompany=None, entertainmentCompany=None, furnitureSupplyCompany=None):
+        self.eventID= eventID
+        self.eventType= eventType
+        self.theme= theme
+        self.eventDate= eventDate
+        self.eventTime= eventTime
+        self.eventDuration= eventDuration
+        self.venueAddress= venueAddress
+        self.clientID= clientID
+        self.guestList= guestList
+        self.cateringCompany= cateringCompany
+        self.cleaningCompany= cleaningCompany
+        self.decorationsCompany= decorationsCompany
+        self.entertainmentCompany= entertainmentCompany
+        self.furnitureSupplyCompany= furnitureSupplyCompany
+
+    #method to calculate the total cost
+    def calculateTotalCost(self):
+        pass
+
+#adding the setter and getter functions for the class Event
+def getEventID(self):
+    return self.eventID
+def setEventID(self, eventID):
+     self.eventID = eventID
+
+
+def getEventType(self):
+    return self.eventType
+def setEventType(self, eventType):
+    self.eventType = eventType
+
+def getTheme(self):
+    return self.theme
+def setTheme(self, theme):
+    self.theme = theme
+
+def getEventDate(self):
+    return self.eventDate
+def setEventDate(self, eventDate):
+     self.eventDate = eventDate
+
+def getEventTime(self):
+    return self.eventTime
+def setEventTime(self, eventTime):
+     self.eventTime = eventTime
+
+def getEventDuration(self):
+    return self.eventDuration
+def setEventDuration(self, eventDuration):
+    self.eventDuration = eventDuration
+
+def getVenueAddress(self):
+    return self.venueAddress
+def setVenueAddress(self, venueAddress):
+    self.venueAddress = venueAddress
+
+def getClientID(self):
+    return self.clientID
+def setClientID(self, clientID):
+    self.clientID = clientID
+
+def getGuestList(self):
+    return self.guestList
+def setGuestList(self, guestList):
+    self.guestList = guestList
+
+def getCateringCompany(self):
+    return self.cateringCompany
+def setCateringCompany(self, cateringCompany):
+    self.cateringCompany = cateringCompany
+
+def getCleaningCompany(self):
+     return self.cleaningCompany
+def setCleaningCompany(self, cleaningCompany):
+    self.cleaningCompany = cleaningCompany
+
+def getDecorationsCompany(self):
+    return self.decorationsCompany
+def setDecorationsCompany(self, decorationsCompany):
+    self.decorationsCompany = decorationsCompany
+
+def getEntertainmentCompany(self):
+    return self.entertainmentCompany
+def setEntertainmentCompany(self, entertainmentCompany):
+    self.entertainmentCompany = entertainmentCompany
+
+def getFurnitureSupplyCompany(self):
+    return self.furnitureSupplyCompany
+    def setFurnitureSupplyCompany(self, furnitureSupplyCompany):
+     self.furnitureSupplyCompany = furnitureSupplyCompany
 
