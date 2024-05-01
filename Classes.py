@@ -70,15 +70,14 @@ class Manager(Employee):
         pass
 
 #adding the setter and getter functions for the class Manager
-    def getManagerType(self):
+    def get_ManagerType(self):
         return self.managerType
-    def setManagerType(self, managerType):
+    def set_ManagerType(self, managerType):
         self.managerType = managerType
 
-    def getManagedEmployees(self):
+    def get_ManagedEmployees(self):
         return self.managedEmployees
-
-    def setManagedEmployees(self, managedEmployees):
+    def set_ManagedEmployees(self, managedEmployees):
         self.managedEmployees = managedEmployees
 
 class Salesperson(Employee):
@@ -116,79 +115,79 @@ class Event:
         pass
 
 #adding the setter and getter functions for the class Event
-    def getEventID(self):
+    def get_eventID(self):
         return self.eventID
-    def setEventID(self, eventID):
+    def set_eventID(self, eventID):
         self.eventID = eventID
 
-    def getEventType(self):
+    def get_eventType(self):
         return self.eventType
-    def setEventType(self, eventType):
+    def set_eventType(self, eventType):
         self.eventType = eventType
 
-    def getTheme(self):
+    def get_theme(self):
         return self.theme
-    def setTheme(self, theme):
+    def set_theme(self, theme):
         self.theme = theme
 
-    def getEventDate(self):
+    def get_eventDate(self):
         return self.eventDate
-    def setEventDate(self, eventDate):
+    def set_eventDate(self, eventDate):
         self.eventDate = eventDate
 
-    def getEventTime(self):
+    def get_eventTime(self):
         return self.eventTime
-    def setEventTime(self, eventTime):
+    def set_eventTime(self, eventTime):
         self.eventTime = eventTime
 
-    def getEventDuration(self):
+    def get_eventDuration(self):
         return self.eventDuration
-    def setEventDuration(self, eventDuration):
+    def set_eventDuration(self, eventDuration):
         self.eventDuration = eventDuration
 
-    def getVenueAddress(self):
+    def get_venueAddress(self):
         return self.venueAddress
-    def setVenueAddress(self, venueAddress):
+    def set_venueAddress(self, venueAddress):
         self.venueAddress = venueAddress
 
-    def getClientID(self):
+    def get_clientID(self):
         return self.clientID
-    def setClientID(self, clientID):
+    def set_clientID(self, clientID):
         self.clientID = clientID
 
-    def getGuestList(self):
+    def get_guestList(self):
         return self.guestList
-    def setGuestList(self, guestList):
+    def set_guestList(self, guestList):
         self.guestList = guestList
 
-    def getCateringCompany(self):
+    def get_cateringCompany(self):
         return self.cateringCompany
-    def setCateringCompany(self, cateringCompany):
+    def set_cateringCompany(self, cateringCompany):
         self.cateringCompany = cateringCompany
 
-    def getCleaningCompany(self):
+    def get_cleaningCompany(self):
         return self.cleaningCompany
-    def setCleaningCompany(self, cleaningCompany):
+    def set_cleaningCompany(self, cleaningCompany):
         self.cleaningCompany = cleaningCompany
 
-    def getDecorationsCompany(self):
+    def get_decorationsCompany(self):
         return self.decorationsCompany
-    def setDecorationsCompany(self, decorationsCompany):
+    def set_decorationsCompany(self, decorationsCompany):
         self.decorationsCompany = decorationsCompany
 
-    def getEntertainmentCompany(self):
+    def get_entertainmentCompany(self):
         return self.entertainmentCompany
-    def setEntertainmentCompany(self, entertainmentCompany):
+    def set_entertainmentCompany(self, entertainmentCompany):
         self.entertainmentCompany = entertainmentCompany
 
-    def getFurnitureSupplyCompany(self):
+    def get_furnitureSupplyCompany(self):
         return self.furnitureSupplyCompany
-    def setFurnitureSupplyCompany(self, furnitureSupplyCompany):
+    def set_furnitureSupplyCompany(self, furnitureSupplyCompany):
         self.furnitureSupplyCompany = furnitureSupplyCompany
 
 class Client:
     """a class to represent clinet"""
-    def __inin__(self, clientID=0, clientName= "", clientAddress= "", clientContactDetails="", clientBudget=0.0 ):
+    def __init__(self, clientID=0, clientName= "", clientAddress= "", clientContactDetails="", clientBudget=0.0 ):
         self.clientID= clientID
         self.clientName= clientName
         self.clientAddress= clientAddress
@@ -200,29 +199,29 @@ class Client:
         pass
 
 #adding the setter and getter functions for the class Client
-    def getClientID(self):
+    def get_clientID(self):
         return self.clientID
-    def setClientID(self, clientID):
+    def set_clientID(self, clientID):
         self.clientID = clientID
 
-    def getClientName(self):
+    def get_clientName(self):
         return self.clientName
-    def setClientName(self, clientName):
+    def set_clientName(self, clientName):
         self.clientName = clientName
 
-    def getClientAddress(self):
+    def get_clientAddress(self):
         return self.clientAddress
-    def setClientAddress(self, clientAddress):
+    def set_clientAddress(self, clientAddress):
         self.clientAddress = clientAddress
 
-    def getClientContactDetails(self):
+    def get_clientContactDetails(self):
         return self.clientContactDetails
-    def setClientContactDetails(self, clientContactDetails):
+    def set_clientContactDetails(self, clientContactDetails):
         self.clientContactDetails = clientContactDetails
 
-    def getClientBudget(self):
+    def get_clientBudget(self):
         return self.clientBudget
-    def setClientBudget(self, clientBudget):
+    def set_clientBudget(self, clientBudget):
         self.clientBudget = clientBudget
 
 class Guest:
@@ -234,22 +233,66 @@ class Guest:
         self.guestContactDetails= guestContactDetails
 
 #adding the setter and getter functions for the class Guest
-    def getGuestID(self):
+    def get_guestID(self):
         return self.guestID
-    def setGuestID(self, guestID):
+    def set_guestID(self, guestID):
         self.guestID = guestID
 
-    def getGuestName(self):
+    def get_guestName(self):
         return self.guestName
-    def setGuestName(self, guestName):
+    def set_guestName(self, guestName):
         self.guestName = guestName
 
-    def getGuestAddress(self):
+    def get_guestAddress(self):
         return self.guestAddress
-    def setGuestAddress(self, guestAddress):
+    def set_guestAddress(self, guestAddress):
         self.guestAddress = guestAddress
 
-    def getGuestContactDetails(self):
+    def get_guestContactDetails(self):
         return self.guestContactDetails
-    def setGuestContactDetails(self, guestContactDetails):
+    def set_guestContactDetails(self, guestContactDetails):
         self.guestContactDetails = guestContactDetails
+
+class Venue:
+    """a class to represent Venue"""
+    def __init__(self, venueID=0, venueName="", venueAddress="", venueContact="", venMinOfGuests=0, venMaxOfGuests=0):
+        self.venueID= venueID
+        self.venueName= venueName
+        self.venueAddress= venueAddress
+        self.venueContact= venueContact
+        self.venMinOfGuests= venMinOfGuests
+        self. venMaxOfGuests= venMaxOfGuests
+
+#method to check availability
+    def checkAvailability(self):
+        pass
+#adding the setter and getter functions for the class Venue
+    def get_venueID(self):
+        return self.venueID
+    def set_venueID(self, venueID):
+        self.venueID = venueID
+
+    def get_venueName(self):
+        return self.venueName
+    def set_venueName(self, venueName):
+        self.venueName = venueName
+
+    def get_venueAddress(self):
+        return self.venueAddress
+    def set_venueAddress(self, venueAddress):
+        self.venueAddress = venueAddress
+
+    def get_venueContact(self):
+        return self.venueContact
+    def set_venueContact(self, venueContact):
+        self.venueContact = venueContact
+
+    def get_venMinOfGuests(self):
+        return self.venMinOfGuests
+    def set_venMinOfGuests(self, venMinOfGuests):
+        self.venMinOfGuests = venMinOfGuests
+
+    def get_venMaxOfGuests(self):
+        return self.venMaxOfGuests
+    def set_venMaxOfGuests(self, venMaxOfGuests):
+        self.venMaxOfGuests = venMaxOfGuests
