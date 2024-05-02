@@ -1,5 +1,6 @@
 import pickle    # Importing the pickle module for serialization
 
+# Define the DataManager class for saving and loading data
 class DataManager:
     def save_data(filename, data):
         with open(filename, 'wb') as file:    # Open file in binary write mode

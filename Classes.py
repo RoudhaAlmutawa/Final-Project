@@ -1,9 +1,15 @@
 #the code below shows a software system to manage the organizes events of the company
-import pickle
 from datetime import datetime
+from data_management import DataManager
+import pickle
+from GUI import EventManagementApp
+import tkinter as tk
+
+
 
 class Employee:
     """a class to represent employee"""
+    FILENAME = "employees.pkl"
     def __init__(self, name="", employeeID=0, department="", jobTitle="", basicSalary=0.0, age=0, dateOfBirth= datetime, passportDetails=""):
         self.name= name
         self.employeeID= employeeID
@@ -17,6 +23,14 @@ class Employee:
 #method to update emplyee details
     def updateDetails(self):
         pass
+
+    def save_employees(employees):
+        # Save employees data using DataManager
+        DataManager.save_data(Employee.FILENAME, employees)
+    def load_employees():
+        # Load employees data using DataManager
+        return DataManager.load_data(Employee.FILENAME)
+
 
 #adding the setter and getter functions for the class Employee
     def get_name(self):
@@ -60,6 +74,8 @@ class Employee:
         self.passportDetails = passportDetails
 
 class Manager(Employee):
+    """a class to represent manager"""
+    FILENAME = "managers.pkl"
     def __init__(self, name="", employeeID=0, department="", jobTitle="", basicSalary=0.0, age=0, dateOfBirth= datetime, passportDetails="", managerType ="", ):
         super().__init__()      # Calling the superclass constructor
         self.managerType= managerType
@@ -68,6 +84,13 @@ class Manager(Employee):
 #method to know the mannaged employees
     def getManagedEmployees(self):
         pass
+
+    def save_managers(managers):
+        # Save managers data using DataManager
+        DataManager.save_data(Manager.FILENAME, managers)
+    def load_managers():
+        # Load managers data using DataManager
+        return DataManager.load_data(Manager.FILENAME)
 
 #adding the setter and getter functions for the class Manager
     def get_ManagerType(self):
@@ -81,9 +104,19 @@ class Manager(Employee):
         self.managedEmployees = managedEmployees
 
 class Salesperson(Employee):
+    """a class to represent sales person"""
+    FILENAME = "salespeople.pkl"
     def __init__(self, name="", employeeID=0, department="", jobTitle="", basicSalary=0.0, age=0, dateOfBirth= datetime, passportDetails="", managerID=""):
         super().__init__(name, employeeID, department, jobTitle, basicSalary, age, dateOfBirth, passportDetails)        # Calling the superclass constructor
         self.managerID= managerID
+
+    def save_salespeople(salespeople):
+        # Save salespeople data using DataManager
+        DataManager.save_data(Salesperson.FILENAME, salespeople)
+    def load_salespeople():
+        # Load salespeople data using DataManager
+        return DataManager.load_data(Salesperson.FILENAME)
+
 
 #adding the setter and getter functions for the class Salesperson
     def getManagerID(self):
@@ -94,6 +127,7 @@ class Salesperson(Employee):
 
 class Event:
     """a class to represent event"""
+    FILENAME = "events.pkl"
     def __init__(self, eventID=0, eventType="", theme= "", eventDate=datetime, eventTime= datetime, eventDuration= 0, venueAddress= "", clientID=0, guestList= [], cleaningCompany=None, cateringCompany= None, decorationsCompany=None, entertainmentCompany=None, furnitureSupplyCompany=None):
         self.eventID= eventID
         self.eventType= eventType
@@ -113,6 +147,13 @@ class Event:
 #method to calculate the total cost
     def calculateTotalCost(self):
         pass
+
+    def save_events(events):
+        # Save events data using DataManager
+        DataManager.save_data(Event.FILENAME, events)
+    def load_events():
+        # Load events data using DataManager
+        return DataManager.load_data(Event.FILENAME)
 
 #adding the setter and getter functions for the class Event
     def get_eventID(self):
@@ -187,6 +228,7 @@ class Event:
 
 class Client:
     """a class to represent clinet"""
+    FILENAME = "clients.pkl"
     def __init__(self, clientID=0, clientName= "", clientAddress= "", clientContactDetails="", clientBudget=0.0 ):
         self.clientID= clientID
         self.clientName= clientName
@@ -197,6 +239,13 @@ class Client:
 #method to update budget
     def updateBudget(self):
         pass
+
+    def save_clients(clients):
+        # Save clients data using DataManager
+        DataManager.save_data(Client.FILENAME, clients)
+    def load_clients():
+        # Load clients data using DataManager
+        return DataManager.load_data(Client.FILENAME)
 
 #adding the setter and getter functions for the class Client
     def get_clientID(self):
@@ -226,6 +275,7 @@ class Client:
 
 class Guest:
     """a class to represent a Guest"""
+    FILENAME = "guests.pkl"
     def __init__(self, guestID=0, guestName="", guestAddress="", guestContactDetails=""):
         self.guestID= guestID
         self.guestName= guestName
@@ -236,7 +286,14 @@ class Guest:
     def __str__(self):
         return f"Guest ID: {self.guestID}, Name: {self.guestName}, Address: {self.guestAddress}, Contact Details: {self.guestContactDetails}"
 
-#adding the setter and getter functions for the class Guest
+    def save_guests(guests):
+        # Save guests data using DataManager
+        DataManager.save_data(Guest.FILENAME, guests)
+    def load_guests():
+        # Load guests data using DataManager
+        return DataManager.load_data(Guest.FILENAME)
+
+    #adding the setter and getter functions for the class Guest
     def get_guestID(self):
         return self.guestID
     def set_guestID(self, guestID):
@@ -259,6 +316,7 @@ class Guest:
 
 class Venue:
     """a class to represent Venue"""
+    FILENAME = "venues.pkl"
     def __init__(self, venueID=0, venueName="", venueAddress="", venueContact="", venMinOfGuests=0, venMaxOfGuests=0):
         self.venueID= venueID
         self.venueName= venueName
@@ -270,6 +328,14 @@ class Venue:
 #method to check availability
     def checkAvailability(self):
         pass
+
+    def save_venues(venues):
+        # Save venues data using DataManager
+        DataManager.save_data(Venue.FILENAME, venues)
+    def load_venues():
+        # Load venues data using DataManager
+        return DataManager.load_data(Venue.FILENAME)
+
 #adding the setter and getter functions for the class Venue
     def get_venueID(self):
         return self.venueID
@@ -303,6 +369,7 @@ class Venue:
 
 class Supplier:
     """a class to represent Supplier"""
+    FILENAME = "suppliers.pkl"
     def __init__(self, supplierID=0, supplierName="", supplierAddress="", supplierContactDetails=""):
         self.supplierID= supplierID
         self.supplierName= supplierName
@@ -312,6 +379,13 @@ class Supplier:
 #method to view services
     def viewServices(self):
         pass
+
+    def save_suppliers(suppliers):
+        # Save suppliers data using DataManager
+        DataManager.save_data(Supplier.FILENAME, suppliers)
+    def load_suppliers():
+        # Load suppliers data using DataManager
+        return DataManager.load_data(Supplier.FILENAME)
 
 #adding the setter and getter functions for the class Supplier
     def get_supplierID(self):
@@ -337,6 +411,7 @@ class Supplier:
 
 class Caterer(Supplier):
     """a class to represent Caterer"""
+    FILENAME = "caterers.pkl"
     def __init__(self, supplierID, supplierName, supplierAddress, supplierContactDetails, menu="", caterminOfGuests=0,
                  catermaxOfGuests=0):
         super().__init__()
@@ -348,7 +423,14 @@ class Caterer(Supplier):
     def viewMenu(self):
         pass
 
-# adding the setter and getter functions for the class Caterer
+    def save_caterers(caterers):
+        # Save caterers data using DataManager
+        DataManager.save_data(Caterer.FILENAME, caterers)
+    def load_caterers():
+        # Load caterers data using DataManager
+        return DataManager.load_data(Caterer.FILENAME)
+
+    # adding the setter and getter functions for the class Caterer
     def get_menu(self):
         return self.menu
     def set_menu(self, menu):
@@ -367,7 +449,7 @@ class Caterer(Supplier):
 
 class CleaningCompany(Supplier):
     """a class to represent CleaningCompany"""
-
+    FILENAME = "cleaning_companies.pkl"
     def __init__(self, supplierID, supplierName, supplierAddress, supplierContactDetails, cleaningHours=0,
                  typeOfCleaning=""):
         super().__init__(supplierID, supplierName, supplierAddress, supplierContactDetails)
@@ -377,6 +459,13 @@ class CleaningCompany(Supplier):
     # method to manage cleaning packages
     def manageCleaningPackages(self):
         pass
+
+    def save_cleaning_companies(cleaners):
+        # Save cleaning companies data using DataManager
+        DataManager.save_data(CleaningCompany.FILENAME, cleaners)
+    def load_cleaning_companies():
+        # Load cleaning companies data using DataManager
+        return DataManager.load_data(CleaningCompany.FILENAME)
 
     # adding the setter and getter functions for the class CleaningCompany
     def get_cleaningHours(self):
@@ -392,6 +481,7 @@ class CleaningCompany(Supplier):
 
 class DecorationsCompany(Supplier):
     """a class to represent DecorationsCompany"""
+    FILENAME = "decorations_companies.pkl"
     def __init__(self, supplierID, supplierName, supplierAddress, supplierContactDetails, arrangementsType="", cost=0.0,
                  decorationsColor=""):
         super().__init__(supplierID, supplierName, supplierAddress, supplierContactDetails)
@@ -402,6 +492,13 @@ class DecorationsCompany(Supplier):
     # method to design decoration packages
     def designDecorationPackages(self):
         pass
+
+    def save_decorations_companies(decorators):
+        # Save decorations companies data using DataManager
+        DataManager.save_data(DecorationsCompany.FILENAME, decorators)
+    def load_decorations_companies():
+        # Load decorations companies data using DataManager
+        return DataManager.load_data(DecorationsCompany.FILENAME)
 
     # adding the setter and getter functions for the class DecorationsCompany
     def get_arrangementsType(self):
@@ -421,6 +518,7 @@ class DecorationsCompany(Supplier):
 
 class EntertainmentCompany(Supplier):
     """a class to represent EntertainmentCompany"""
+    FILENAME = "entertainment_companies.pkl"
     def __init__(self, supplierID, supplierName, supplierAddress, supplierContactDetails, typeOfEntertainment=""):
         super().__init__(supplierID, supplierName, supplierAddress, supplierContactDetails)
         self.typeOfEntertainment = typeOfEntertainment
@@ -428,6 +526,13 @@ class EntertainmentCompany(Supplier):
 #method to view entertainers
     def viewEntertainers(self):
       pass
+
+    def save_entertainment_companies(entertainers):
+        # Save entertainment companies data using DataManager
+        DataManager.save_data(EntertainmentCompany.FILENAME, entertainers)
+    def load_entertainment_companies():
+        # Load entertainment companies data using DataManager
+        return DataManager.load_data(EntertainmentCompany.FILENAME)
 
 # adding the setter and getter functions for the class EntertainmentCompany
     def get_typeOfEntertainment(self):
@@ -437,10 +542,18 @@ class EntertainmentCompany(Supplier):
 
 class FurnitureSupplier(Supplier):
     """a class to represent FurnitureSupplier"""
+    FILENAME = "furniture_suppliers.pkl"
     def __init__(self, supplierID, supplierName, supplierAddress, supplierContactDetails, typeOfFurniture= "", furnitureColor=""):
         super().__init__(supplierID, supplierName, supplierAddress, supplierContactDetails)
         self.typeOfFurniture = typeOfFurniture
         self.furnitureColor = furnitureColor
+
+    def save_furniture_suppliers(furniture_suppliers):
+        # Save furniture suppliers data using DataManager
+        DataManager.save_data(FurnitureSupplier.FILENAME, furniture_suppliers)
+    def load_furniture_suppliers():
+        # Load furniture suppliers data using DataManager
+        return DataManager.load_data(FurnitureSupplier.FILENAME)
 
 # adding the setter and getter functions for the class FurnitureSupplier
     def get_typeOfFurniture(self):
