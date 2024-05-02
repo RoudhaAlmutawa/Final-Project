@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
+import pickle
 
 class EventManagementApp:
     """a class to represent event management app"""
@@ -125,6 +126,18 @@ class EventManagementApp:
     def display_entity_details(self):
         # Add/Delete/Modify/Display details of employees, events, clients, guests, and suppliers
         messagebox.showinfo("Display Details", "Adding/Deleting/Modifying/Displaying details of employees, events, clients, guests, and suppliers")
+
+    def save_data(self, data, filename):
+        with open(filename, "wb") as file:
+            pickle.dump(data, file)
+
+    def load_data(self, filename):
+        try:
+            with open(filename, "rb") as file:
+                data = pickle.load(file)
+            return data
+        except FileNotFoundError:
+            return None
 
 if __name__ == "__main__":
     root = tk.Tk()
