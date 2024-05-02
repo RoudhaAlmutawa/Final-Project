@@ -82,7 +82,7 @@ class Manager(Employee):
 
 class Salesperson(Employee):
     def __init__(self, name="", employeeID=0, department="", jobTitle="", basicSalary=0.0, age=0, dateOfBirth= datetime, passportDetails="", managerID=""):
-        super().__init()      # Calling the superclass constructor
+        super().__init(name, employeeID, department, jobTitle, basicSalary, age, dateOfBirth, passportDetails)      # Calling the superclass constructor
         self.managerID= managerID
 
 #adding the setter and getter functions for the class Salesperson
@@ -333,8 +333,8 @@ class Supplier:
 
 class Caterer(Supplier):
     """a class to represent Caterer"""
-    def __init__(self, supplierID, supplierName, supplierAddress, supplierContactDetails, menu, caterminOfGuests,
-                 catermaxOfGuests):
+    def __init__(self, supplierID, supplierName, supplierAddress, supplierContactDetails, menu="", caterminOfGuests=0,
+                 catermaxOfGuests=0):
         super().__init__()
         self.menu = menu
         self.caterminOfGuests = caterminOfGuests
@@ -364,9 +364,9 @@ class Caterer(Supplier):
 class CleaningCompany(Supplier):
     """a class to represent CleaningCompany"""
 
-    def __init__(self, supplierID, supplierName, supplierAddress, supplierContactDetails, cleaningHours,
-                 typeOfCleaning):
-        super().__init__()
+    def __init__(self, supplierID, supplierName, supplierAddress, supplierContactDetails, cleaningHours=0,
+                 typeOfCleaning=""):
+        super().__init__(supplierID, supplierName, supplierAddress, supplierContactDetails)
         self.cleaningHours = cleaningHours
         self.typeOfCleaning = typeOfCleaning
 
@@ -388,10 +388,9 @@ class CleaningCompany(Supplier):
 
 class DecorationsCompany(Supplier):
     """a class to represent DecorationsCompany"""
-
-    def __init__(self, supplierID, supplierName, supplierAddress, supplierContactDetails, arrangementsType, cost,
-                 decorationsColor):
-        super().__init__()
+    def __init__(self, supplierID, supplierName, supplierAddress, supplierContactDetails, arrangementsType="", cost=0.0,
+                 decorationsColor=""):
+        super().__init__(supplierID, supplierName, supplierAddress, supplierContactDetails)
         self.arrangementsType = arrangementsType
         self.cost = cost
         self.decorationsColor = decorationsColor
@@ -418,8 +417,8 @@ class DecorationsCompany(Supplier):
 
 class EntertainmentCompany(Supplier):
     """a class to represent EntertainmentCompany"""
-    def __init__(self, supplierID, supplierName, supplierAddress, supplierContactDetails, typeOfEntertainment):
-        super().__init__()
+    def __init__(self, supplierID, supplierName, supplierAddress, supplierContactDetails, typeOfEntertainment=""):
+        super().__init__(supplierID, supplierName, supplierAddress, supplierContactDetails)
         self.typeOfEntertainment = typeOfEntertainment
 
 #method to view entertainers
@@ -434,8 +433,8 @@ class EntertainmentCompany(Supplier):
 
 class FurnitureSupplier(Supplier):
     """a class to represent FurnitureSupplier"""
-    def __init__(self, supplierID, supplierName, supplierAddress, supplierContactDetails, typeOfFurniture, furnitureColor):
-        super().__init__()
+    def __init__(self, supplierID, supplierName, supplierAddress, supplierContactDetails, typeOfFurniture= "", furnitureColor=""):
+        super().__init__(supplierID, supplierName, supplierAddress, supplierContactDetails)
         self.typeOfFurniture = typeOfFurniture
         self.furnitureColor = furnitureColor
 
