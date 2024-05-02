@@ -1,5 +1,5 @@
 #the code below shows a software system to manage the organizes events of the company
-from datetime import datetime
+from datetime import datetime   #importing the date time
 
 class Employee:
     """a class to represent employee"""
@@ -16,7 +16,6 @@ class Employee:
 #method to update emplyee details
     def updateDetails(self):
         pass
-
 
 #adding the setter and getter functions for the class Employee
     def get_name(self):
@@ -62,7 +61,8 @@ class Employee:
 class Manager(Employee):
     """a class to represent manager"""
     def __init__(self, name="", employeeID=0, department="", jobTitle="", basicSalary=0.0, age=0, dateOfBirth= datetime, passportDetails="", managerType ="", ):
-        super().__init__()      # Calling the superclass constructor
+        # Call the superclass constructor to initialize inherited attributes
+        super().__init__(name, employeeID, department, jobTitle, basicSalary, age, dateOfBirth, passportDetails)      # Calling the superclass constructor
         self.managerType= managerType
         self.managedEmployees=[]
 
@@ -84,6 +84,7 @@ class Manager(Employee):
 class Salesperson(Employee):
     """a class to represent sales person"""
     def __init__(self, name="", employeeID=0, department="", jobTitle="", basicSalary=0.0, age=0, dateOfBirth= datetime, passportDetails="", managerID=""):
+        # Call the superclass constructor to initialize inherited attributes
         super().__init__(name, employeeID, department, jobTitle, basicSalary, age, dateOfBirth, passportDetails)        # Calling the superclass constructor
         self.managerID= managerID
 
