@@ -40,7 +40,7 @@ class Employee:
         self.jobTitle = jobTitle
 
     def get_basicSalary(self):
-        return self.jobTitle
+        return self.basicSalary
     def set_basicSalary(self, basicSalary):
         self.basicSalary = basicSalary
 
@@ -82,7 +82,7 @@ class Manager(Employee):
 
 class Salesperson(Employee):
     def __init__(self, name="", employeeID=0, department="", jobTitle="", basicSalary=0.0, age=0, dateOfBirth= datetime, passportDetails="", managerID=""):
-        super().__init(name, employeeID, department, jobTitle, basicSalary, age, dateOfBirth, passportDetails)      # Calling the superclass constructor
+        super().__init__(name, employeeID, department, jobTitle, basicSalary, age, dateOfBirth, passportDetails)        # Calling the superclass constructor
         self.managerID= managerID
 
 #adding the setter and getter functions for the class Salesperson
