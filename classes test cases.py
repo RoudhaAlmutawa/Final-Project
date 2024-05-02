@@ -1,9 +1,10 @@
+# this code defines test cases to showcase the program features.
+#importing the classes
 from Classes import Employee, Manager, Salesperson, Event, Client, Guest, Venue, Supplier, Caterer, CleaningCompany, DecorationsCompany, EntertainmentCompany, FurnitureSupplier
-from datetime import datetime
+from datetime import datetime #importing the date time
 
-#this code defines test cases to showcase the program features.
 
-# Test case 1: Create and update employee details
+# Test case 1: creating and updating employee details
 # Creating the employees
 emp1 = Employee(name="Susan Meyers", employeeID=47899, department="Sales", jobTitle="Manager", basicSalary=37500.0)
 emp2 = Employee(name="Joy Rogers", employeeID=81774, department="Sales", jobTitle="Manager", basicSalary=24000.0)
@@ -22,7 +23,7 @@ print("Employee 1 Basic Salary:", emp1.get_basicSalary())
 print("Employee 3 Name:", emp3.get_name())
 print("Employee 3 Basic Salary:", emp3.get_basicSalary())
 
-#test case 2: Create and Manage Events:
+#test case 2: creating and managing events:
 #creating the event
 event1 = Event(eventID=1, eventType="graduation", theme="fun", eventDate=datetime(2024, 5, 15),
                eventTime=datetime(2024, 5, 15, 18, 0), eventDuration=4, venueAddress="trade center", clientID=1,
@@ -44,7 +45,7 @@ print("Guest List:")
 for guest in event1.get_guestList():
     print(guest)
 
-#test case 3: Create and Manage Clients:
+#test case 3: Creating and managing clients:
 #creating the client
 client1= Client(clientID=1, clientName="Reem", clientAddress="skh. zayed road", clientContactDetails="reem@yahoo.com",
                  clientBudget=10000.0)
@@ -58,7 +59,7 @@ print("test case 3:")
 print("Client Name:", client1.get_clientName())
 print("Client Budget:", client1.get_clientBudget())
 
-#test case 4:Create and View Supplier Services:
+#test case 4:creating and viewning supplier services:
 #creating the  catering company
 caterer1 = Caterer(supplierID=1, supplierName="Best Catering", supplierAddress="Jumaira",
                    supplierContactDetails="05072323233", menu=["Appetizers", "Entrees", "Desserts"],
@@ -73,7 +74,7 @@ entertainment1 = EntertainmentCompany(supplierID=2, supplierName="Best Entertain
 # View entertainment options
 print("Entertainment Type:", entertainment1.get_typeOfEntertainment())
 
-#test case 5: Create and Manage Employees with Different Roles:
+#test case 5: creating and managing  Employees with diffrent roles:
 # creating the managers
 manager1 = Manager(name="Susan Meyers", employeeID=47899, department="Sales", jobTitle="Manager", basicSalary=37500.0,
                    age=45, dateOfBirth=datetime(1979, 5, 15), passportDetails="ABCD1234", managerType="Senior")
@@ -98,7 +99,7 @@ print("test case 5:")
 print("Manager 1 Managed Employees:", [emp.get_name() for emp in manager1.get_ManagedEmployees()])
 print("Manager 2 Managed Employees:", [emp.get_name() for emp in manager2.get_ManagedEmployees()])
 
-# Test case 6: Create and Manage Events with Various Services
+# Test case 6: creatuing and managing events with carious services
 # Creating an event with different services
 event2 = Event(eventID=2, eventType="Annual collage reunion", theme="formal",
                eventDate=datetime(2024, 7, 30), eventTime=datetime(2024, 7, 30, 19, 0),

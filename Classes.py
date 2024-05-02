@@ -1,23 +1,25 @@
-#the code below shows a software system to manage the organizes events of the company
+# the code below shows a software system to manage the organizes events of the company
 from datetime import datetime   #importing the date time
 
 class Employee:
     """a class to represent employee"""
+    # the constructor the init function is added to initialize the Employee attributes
+    # assigning the attributs values such as string, integer, and float
     def __init__(self, name="", employeeID=0, department="", jobTitle="", basicSalary=0.0, age=0, dateOfBirth= datetime, passportDetails=""):
         self.name= name
-        self.employeeID= employeeID
-        self.department= department
-        self.jobTitle= jobTitle
-        self.basicSalary= basicSalary
-        self.age= age
+        self.employeeID = employeeID
+        self.department = department
+        self.jobTitle = jobTitle
+        self.basicSalary = basicSalary
+        self.age = age
         self.dateOfBirth = dateOfBirth
         self.passportDetails = passportDetails
 
-#method to update emplyee details
+# method to update emplyee details
     def updateDetails(self):
         pass
 
-#adding the setter and getter functions for the class Employee
+# adding the setter and getter functions for the class Employee
     def get_name(self):
         return self.name
     def set_name(self, name):
@@ -60,17 +62,19 @@ class Employee:
 
 class Manager(Employee):
     """a class to represent manager"""
+    # the constructor the init function is added to initialize the manager attributes
+    # assigning the attributs values such as string, integer, and float
     def __init__(self, name="", employeeID=0, department="", jobTitle="", basicSalary=0.0, age=0, dateOfBirth= datetime, passportDetails="", managerType ="", ):
-        # Call the superclass constructor to initialize inherited attributes
+        # calling the superclass constructor to initialize inherited attributes
         super().__init__(name, employeeID, department, jobTitle, basicSalary, age, dateOfBirth, passportDetails)      # Calling the superclass constructor
-        self.managerType= managerType
-        self.managedEmployees=[]
+        self.managerType = managerType
+        self.managedEmployees =[]
 
-#method to know the mannaged employees
+# method to know the mannaged employees
     def getManagedEmployees(self):
         pass
 
-#adding the setter and getter functions for the class Manager
+# adding the setter and getter functions for the class Manager
     def get_ManagerType(self):
         return self.managerType
     def set_ManagerType(self, managerType):
@@ -83,12 +87,14 @@ class Manager(Employee):
 
 class Salesperson(Employee):
     """a class to represent sales person"""
+    # the constructor the init function is added to initialize the Salesperson attributes
+    # assigning the attributs values such as string, integer, and float
     def __init__(self, name="", employeeID=0, department="", jobTitle="", basicSalary=0.0, age=0, dateOfBirth= datetime, passportDetails="", managerID=""):
-        # Call the superclass constructor to initialize inherited attributes
+        # calling the superclass constructor to initialize inherited attributes
         super().__init__(name, employeeID, department, jobTitle, basicSalary, age, dateOfBirth, passportDetails)        # Calling the superclass constructor
         self.managerID= managerID
 
-#adding the setter and getter functions for the class Salesperson
+# adding the setter and getter functions for the class Salesperson
     def getManagerID(self):
         return self.managerID
     def setManagerID(self, managerID):
@@ -97,27 +103,29 @@ class Salesperson(Employee):
 
 class Event:
     """a class to represent event"""
+    # the constructor the init function is added to initialize the event attributes
+    # assigning the attributs values such as string, integer, and float
     def __init__(self, eventID=0, eventType="", theme= "", eventDate=datetime, eventTime= datetime, eventDuration= 0, venueAddress= "", clientID=0, guestList= [], cleaningCompany=None, cateringCompany= None, decorationsCompany=None, entertainmentCompany=None, furnitureSupplyCompany=None):
-        self.eventID= eventID
-        self.eventType= eventType
-        self.theme= theme
-        self.eventDate= eventDate
-        self.eventTime= eventTime
-        self.eventDuration= eventDuration
-        self.venueAddress= venueAddress
-        self.clientID= clientID
-        self.guestList= guestList
-        self.cateringCompany= cateringCompany
-        self.cleaningCompany= cleaningCompany
-        self.decorationsCompany= decorationsCompany
-        self.entertainmentCompany= entertainmentCompany
-        self.furnitureSupplyCompany= furnitureSupplyCompany
+        self.eventID = eventID
+        self.eventType = eventType
+        self.theme = theme
+        self.eventDate = eventDate
+        self.eventTime = eventTime
+        self.eventDuration = eventDuration
+        self.venueAddress = venueAddress
+        self.clientID = clientID
+        self.guestList = guestList
+        self.cateringCompany = cateringCompany
+        self.cleaningCompany = cleaningCompany
+        self.decorationsCompany = decorationsCompany
+        self.entertainmentCompany = entertainmentCompany
+        self.furnitureSupplyCompany = furnitureSupplyCompany
 
-#method to calculate the total cost
+# method to calculate the total cost
     def calculateTotalCost(self):
         pass
 
-#adding the setter and getter functions for the class Event
+# adding the setter and getter functions for the class Event
     def get_eventID(self):
         return self.eventID
     def set_eventID(self, eventID):
@@ -190,18 +198,20 @@ class Event:
 
 class Client:
     """a class to represent clinet"""
+    # the constructor the init function is added to initialize the clinet attributes
+    # assigning the attributs values such as string, integer, and float
     def __init__(self, clientID=0, clientName= "", clientAddress= "", clientContactDetails="", clientBudget=0.0 ):
-        self.clientID= clientID
-        self.clientName= clientName
-        self.clientAddress= clientAddress
-        self.clientContactDetails= clientContactDetails
-        self.clientBudget= clientBudget
+        self.clientID = clientID
+        self.clientName = clientName
+        self.clientAddress = clientAddress
+        self.clientContactDetails = clientContactDetails
+        self.clientBudget = clientBudget
 
-#method to update budget
+# method to update budget
     def updateBudget(self):
         pass
 
-#adding the setter and getter functions for the class Client
+# adding the setter and getter functions for the class Client
     def get_clientID(self):
         return self.clientID
     def set_clientID(self, clientID):
@@ -229,17 +239,19 @@ class Client:
 
 class Guest:
     """a class to represent a Guest"""
+    # the constructor the init function is added to initialize the Guest attributes
+    # assigning the attributs values such as string, integer, and float
     def __init__(self, guestID=0, guestName="", guestAddress="", guestContactDetails=""):
-        self.guestID= guestID
-        self.guestName= guestName
-        self.guestAddress= guestAddress
-        self.guestContactDetails= guestContactDetails
+        self.guestID = guestID
+        self.guestName = guestName
+        self.guestAddress = guestAddress
+        self.guestContactDetails = guestContactDetails
 
         # adding __str__ method to display guest details
     def __str__(self):
         return f"Guest ID: {self.guestID}, Name: {self.guestName}, Address: {self.guestAddress}, Contact Details: {self.guestContactDetails}"
 
-#adding the setter and getter functions for the class Guest
+# adding the setter and getter functions for the class Guest
     def get_guestID(self):
         return self.guestID
     def set_guestID(self, guestID):
@@ -262,19 +274,21 @@ class Guest:
 
 class Venue:
     """a class to represent Venue"""
+    # the constructor the init function is added to initialize the Venue attributes
+    # assigning the attributs values such as string, integer, and float
     def __init__(self, venueID=0, venueName="", venueAddress="", venueContact="", venMinOfGuests=0, venMaxOfGuests=0):
-        self.venueID= venueID
-        self.venueName= venueName
-        self.venueAddress= venueAddress
-        self.venueContact= venueContact
-        self.venMinOfGuests= venMinOfGuests
-        self. venMaxOfGuests= venMaxOfGuests
+        self.venueID = venueID
+        self.venueName = venueName
+        self.venueAddress = venueAddress
+        self.venueContact = venueContact
+        self.venMinOfGuests = venMinOfGuests
+        self. venMaxOfGuests = venMaxOfGuests
 
-#method to check availability
+# method to check availability
     def checkAvailability(self):
         pass
 
-#adding the setter and getter functions for the class Venue
+# adding the setter and getter functions for the class Venue
     def get_venueID(self):
         return self.venueID
     def set_venueID(self, venueID):
@@ -307,17 +321,19 @@ class Venue:
 
 class Supplier:
     """a class to represent Supplier"""
+    # the constructor the init function is added to initialize the Supplier attributes
+    # assigning the attributs values such as string, integer, and float
     def __init__(self, supplierID=0, supplierName="", supplierAddress="", supplierContactDetails=""):
-        self.supplierID= supplierID
-        self.supplierName= supplierName
-        self.supplierAddress= supplierAddress
-        self.supplierContactDetails= supplierContactDetails
+        self.supplierID = supplierID
+        self.supplierName = supplierName
+        self.supplierAddress = supplierAddress
+        self.supplierContactDetails = supplierContactDetails
 
-#method to view services
+# method to view services
     def viewServices(self):
         pass
 
-#adding the setter and getter functions for the class Supplier
+# adding the setter and getter functions for the class Supplier
     def get_supplierID(self):
         return self.supplierID
     def set_supplierID(self, supplierID):
@@ -341,6 +357,8 @@ class Supplier:
 
 class Caterer(Supplier):
     """a class to represent Caterer"""
+    # the constructor the init function is added to initialize the Caterer attributes
+    # assigning the attributs values such as string, integer, and float
     def __init__(self, supplierID, supplierName, supplierAddress, supplierContactDetails, menu="", caterminOfGuests=0,
                  catermaxOfGuests=0):
         super().__init__()
@@ -371,6 +389,8 @@ class Caterer(Supplier):
 
 class CleaningCompany(Supplier):
     """a class to represent CleaningCompany"""
+    # the constructor the init function is added to initialize the CleaningCompany attributes
+    # assigning the attributs values such as string, integer, and float
     def __init__(self, supplierID, supplierName, supplierAddress, supplierContactDetails, cleaningHours=0,
                  typeOfCleaning=""):
         super().__init__(supplierID, supplierName, supplierAddress, supplierContactDetails)
@@ -395,6 +415,8 @@ class CleaningCompany(Supplier):
 
 class DecorationsCompany(Supplier):
     """a class to represent DecorationsCompany"""
+    # the constructor the init function is added to initialize the DecorationsCompany attributes
+    # assigning the attributs values such as string, integer, and float
     def __init__(self, supplierID, supplierName, supplierAddress, supplierContactDetails, arrangementsType="", cost=0.0,
                  decorationsColor=""):
         super().__init__(supplierID, supplierName, supplierAddress, supplierContactDetails)
@@ -424,11 +446,13 @@ class DecorationsCompany(Supplier):
 
 class EntertainmentCompany(Supplier):
     """a class to represent EntertainmentCompany"""
+    # the constructor the init function is added to initialize the EntertainmentCompany attributes
+    # assigning the attributs values such as string, integer, and float
     def __init__(self, supplierID, supplierName, supplierAddress, supplierContactDetails, typeOfEntertainment=""):
         super().__init__(supplierID, supplierName, supplierAddress, supplierContactDetails)
         self.typeOfEntertainment = typeOfEntertainment
 
-#method to view entertainers
+# method to view entertainers
     def viewEntertainers(self):
       pass
 
@@ -440,6 +464,8 @@ class EntertainmentCompany(Supplier):
 
 class FurnitureSupplier(Supplier):
     """a class to represent FurnitureSupplier"""
+    #the constructor the init function is added to initialize the EntertainmentCompany attributes
+    #assigning the attributs values such as string, integer, and float
     def __init__(self, supplierID, supplierName, supplierAddress, supplierContactDetails, typeOfFurniture= "", furnitureColor=""):
         super().__init__(supplierID, supplierName, supplierAddress, supplierContactDetails)
         self.typeOfFurniture = typeOfFurniture
