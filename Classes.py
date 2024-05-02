@@ -232,6 +232,10 @@ class Guest:
         self.guestAddress= guestAddress
         self.guestContactDetails= guestContactDetails
 
+        # adding __str__ method to display guest details
+    def __str__(self):
+        return f"Guest ID: {self.guestID}, Name: {self.guestName}, Address: {self.guestAddress}, Contact Details: {self.guestContactDetails}"
+
 #adding the setter and getter functions for the class Guest
     def get_guestID(self):
         return self.guestID
