@@ -27,16 +27,16 @@ class EventManagementApp:
         self.details_label.grid(row=1, column=0, columnspan=3, padx=10, pady=5)
 
         # Buttons for add, delete, modify, and display details
-        self.add_button = tk.Button(self.main_frame, text="Add Details", command=self.add_details)
+        self.add_button = tk.Button(self.main_frame, text="Add Details", command=self.open_add_window)
         self.add_button.grid(row=2, column=0, padx=10, pady=5)
 
-        self.delete_button = tk.Button(self.main_frame, text="Delete Details", command=self.delete_details)
+        self.delete_button = tk.Button(self.main_frame, text="Delete Details", command=self.open_delete_window)
         self.delete_button.grid(row=2, column=1, padx=10, pady=5)
 
-        self.modify_button = tk.Button(self.main_frame, text="Modify Details", command=self.modify_details)
+        self.modify_button = tk.Button(self.main_frame, text="Modify Details", command=self.open_modify_window)
         self.modify_button.grid(row=2, column=2, padx=10, pady=5)
 
-        self.display_button = tk.Button(self.main_frame, text="Display Details", command=self.display_entity_details)
+        self.display_button = tk.Button(self.main_frame, text="Display Details", command=self.open_display_window)
         self.display_button.grid(row=2, column=3, padx=10, pady=5)
 
     def search_details(self):
@@ -111,21 +111,21 @@ class EventManagementApp:
     def display_details(self, entity_type, details):
         self.details_label.config(text=f"{entity_type} Details: {details}")
 
-    def add_details(self):
-        # Add/Delete/Modify/Display details of employees, events, clients, guests, and suppliers
-        messagebox.showinfo("Add Details", "Adding/Deleting/Modifying/Displaying details of employees, events, clients, guests, and suppliers")
+    def open_add_window(self):
+        # Placeholder for opening add window
+        messagebox.showinfo("Add Details", "Placeholder for opening add window.")
 
-    def delete_details(self):
-        # Add/Delete/Modify/Display details of employees, events, clients, guests, and suppliers
-        messagebox.showinfo("Delete Details", "Adding/Deleting/Modifying/Displaying details of employees, events, clients, guests, and suppliers")
+    def open_delete_window(self):
+        # Placeholder for opening delete window
+        messagebox.showinfo("Delete Details", "Placeholder for opening delete window.")
 
-    def modify_details(self):
-        # Add/Delete/Modify/Display details of employees, events, clients, guests, and suppliers
-        messagebox.showinfo("Modify Details", "Adding/Deleting/Modifying/Displaying details of employees, events, clients, guests, and suppliers")
+    def open_modify_window(self):
+        # Placeholder for opening modify window
+        messagebox.showinfo("Modify Details", "Placeholder for opening modify window.")
 
-    def display_entity_details(self):
-        # Add/Delete/Modify/Display details of employees, events, clients, guests, and suppliers
-        messagebox.showinfo("Display Details", "Adding/Deleting/Modifying/Displaying details of employees, events, clients, guests, and suppliers")
+    def open_display_window(self):
+        # Placeholder for opening display window
+        messagebox.showinfo("Display Details", "Placeholder for opening display window.")
 
     def save_data(self, data, filename):
         with open(filename, "wb") as file:

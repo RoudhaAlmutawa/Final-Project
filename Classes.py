@@ -1,6 +1,5 @@
 #the code below shows a software system to manage the organizes events of the company
 from datetime import datetime
-from data_management import DataManager
 
 class Employee:
     """a class to represent employee"""
