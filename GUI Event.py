@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 
 class EventManagementApp:
-    """a class to represent event managment app"""
+    """a class to represent event management app"""
     def __init__(self, root):
         self.root = root
         self.root.title("Event Management System")
@@ -25,6 +25,19 @@ class EventManagementApp:
         self.details_label = tk.Label(self.main_frame, text="")
         self.details_label.grid(row=1, column=0, columnspan=3, padx=10, pady=5)
 
+        # Buttons for add, delete, modify, and display details
+        self.add_button = tk.Button(self.main_frame, text="Add Details", command=self.add_details)
+        self.add_button.grid(row=2, column=0, padx=10, pady=5)
+
+        self.delete_button = tk.Button(self.main_frame, text="Delete Details", command=self.delete_details)
+        self.delete_button.grid(row=2, column=1, padx=10, pady=5)
+
+        self.modify_button = tk.Button(self.main_frame, text="Modify Details", command=self.modify_details)
+        self.modify_button.grid(row=2, column=2, padx=10, pady=5)
+
+        self.display_button = tk.Button(self.main_frame, text="Display Details", command=self.display_entity_details)
+        self.display_button.grid(row=2, column=3, padx=10, pady=5)
+
     def search_details(self):
         id_number = self.id_entry.get()
         if id_number == "":
@@ -35,7 +48,7 @@ class EventManagementApp:
         if entity_type:
             details = self.fetch_entity_details(entity_type, id_number)
             if details:
-                self.display_details(details)
+                self.display_details(entity_type, details)  # Pass entity type separately
             else:
                 messagebox.showerror("Error", "No details found for the provided ID.")
         else:
@@ -94,8 +107,24 @@ class EventManagementApp:
     def get_venue_details(self, id_number):
         return f"Venue Details for ID {id_number}: Venue Name - Auditorium, Address - ZU campus, Capacity - 500 guests"
 
-    def display_details(self, details):
-        self.details_label.config(text=details)
+    def display_details(self, entity_type, details):
+        self.details_label.config(text=f"{entity_type} Details: {details}")
+
+    def add_details(self):
+        # Add/Delete/Modify/Display details of employees, events, clients, guests, and suppliers
+        messagebox.showinfo("Add Details", "Adding/Deleting/Modifying/Displaying details of employees, events, clients, guests, and suppliers")
+
+    def delete_details(self):
+        # Add/Delete/Modify/Display details of employees, events, clients, guests, and suppliers
+        messagebox.showinfo("Delete Details", "Adding/Deleting/Modifying/Displaying details of employees, events, clients, guests, and suppliers")
+
+    def modify_details(self):
+        # Add/Delete/Modify/Display details of employees, events, clients, guests, and suppliers
+        messagebox.showinfo("Modify Details", "Adding/Deleting/Modifying/Displaying details of employees, events, clients, guests, and suppliers")
+
+    def display_entity_details(self):
+        # Add/Delete/Modify/Display details of employees, events, clients, guests, and suppliers
+        messagebox.showinfo("Display Details", "Adding/Deleting/Modifying/Displaying details of employees, events, clients, guests, and suppliers")
 
 if __name__ == "__main__":
     root = tk.Tk()
